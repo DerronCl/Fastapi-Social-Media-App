@@ -1,42 +1,41 @@
 # Fastapi-Social-Media-App
-A complex social media app that runs on the FastApi. In a nutshell, the app allows users to sign and communicate with one another by creating and editing posts. All the posts are saved to a PostgreSQL database which can be seen by other users. The app uses pydantic models and schemas to structure how messages are sent over the network like a standard social media app. Oauth2 security is used for password login and token verification. I used the Postman API client to test and debug the app while in development. You can also use Fastapi'Swagger UI as a substituite 
+A complex social media app that runs on the FastApi. In a nutshell, the app allows users to sign and communicate with one another by creating and editing posts. All the posts are saved to a PostgreSQL database which can be seen by other users. The app uses pydantic models and schemas to structure how messages are sent over the network like a standard social media app. Oauth2 security is used for password login and token verification. I used the Postman API client to test and debug the app while in development. You can also use Fastapi's Swagger UI as a substituite. 
 
-# Set up Instructions
+## Set up Instructions
 1. First, create a folder named Fastapi. Then create a vritual enviroment and use pip install to download all the packages in the requirements.txt file. Use the following folder structure to prevent import errors:
-                      FastAPI/
-                      │
-                      ├── Project/
-                      │   ├── __init__.py
-                      │   ├── auth2.py
-                      │   └── database.py
-                      │   └── main.py
-                      │   └── models.py
-                      │   └── schemas.py
-                      │   └── utils.py
-                      │   └── Router/
-                      |       └── auth.py
-                      |       └── post.py
-                      |       └── user.py
-                      ├── tests/
-                      │   ├── tests.py
-                      │ 
-                      ├── requirements.txt
+* FastAPI/
+	- *Project/* 
+		- init.py
+		- auth2.py
+		- database.py
+		- main.py
+		- models.py
+		- schemas.py
+		- utils.py
+		- requirements.txt
+			- *Router/*
+				- auth.py
+				- post.py
+				- user.py
+			- *tests/*
+				- tests.py
 
 2. Next, go to the fastapi tutorial website and follow the instructions on how to set up your fastapi. Here's the link: https://fastapi.tiangolo.com/tutorial/
 3. You have to reload app every time you want to use it. After the intial reload, Fastapi will automically save any changes and keep the app running continously.
 Here's example code of app reload: 
-
+  ```
   uvicorn main:app --reload (*Always run this code from Project folder via directory*)
   INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
   INFO:     Started reloader process [28720]
   INFO:     Started server process [28722]
   INFO:     Waiting for application startup.
   INFO:     Application startup complete.
+  ```
 
 The command uvicorn main:app refers to:
-    main: the file main.py (the Python "module").
-    app: the object created inside of main.py with the line app = FastAPI().
-    --reload: make the server restart after code changes. Only use for development.
+- main: the file main.py (the Python "module").
+- app: the object created inside of main.py with the line app = FastAPI().
+- reload: make the server restart after code changes. Only use for development.
 
 4. Follow the Fastapi tutorial on how to setup CRUD path operations and decorators to famailairze yourself with the language. The tutorial will serve as an amazing reference to understanding the structure of the app. 
 5. Make sure to import pydantic to establish the declaritive models and schemas for sending data over the API. 
@@ -45,7 +44,7 @@ The command uvicorn main:app refers to:
 
 Here's the link to the original project on youtube: https://www.youtube.com/watch?v=0sOvCWFmrtA&t=29879s
 
-# App Functions and Files 
+## App Functions and Files 
 main.py --> Main file where all operations work together in sync to run App 
 
 auth2.py --> Create and Verify access user's token. Make sure current user is authenticated after logging in. 
