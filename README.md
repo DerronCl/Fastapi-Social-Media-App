@@ -26,7 +26,7 @@ A complex social media app that runs on the FastApi. In a nutshell, the app allo
 3. You have to reload app every time you want to use it. After the intial reload, Fastapi will automically save any changes and keep the app running continously.
 Here's example code of app reload: 
 
-  uvicorn main:app --reload
+  uvicorn main:app --reload (*Always run this code from Project folder via directory*)
   INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
   INFO:     Started reloader process [28720]
   INFO:     Started server process [28722]
